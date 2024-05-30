@@ -1,0 +1,9 @@
+{% load static %}
+{% block content %} 
+    <div>
+        <div>
+            {% include 'partials/_card.html' %}
+            <a href="{% url 'visualizar_item' x.id}" class="btn btn-success">Visualizar</button>
+        </div>
+    </div>
+{% endblock %}
