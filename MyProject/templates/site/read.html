@@ -1,0 +1,23 @@
+{% extends 'layouts/layout.html' %}
+{% load static %}
+{% block title %}
+<title>Vizualizar</title>
+{% endblock %}
+{% block content %}
+<div class="container">
+  {%if item.path%}
+  <img src="{{item.path.url}}" alt="item.name" width="200px" height="200px">
+  {%endif%}
+  <br>
+  <a href="#" class="img-prod"><img class="img-fluid" src="{{item.image.url}}" alt="Colorlib Template" width="200px" height="auto">
+    <div class="overlay"></div>
+  </a>
+  <strong>Nome:</strong>{{item.name}}
+  <br>
+  <strong>Descrição:</strong>{{item.descript}}
+  <a href="{% url 'editar_item' item.id %}" class="btn btn-warning">Editar</a>
+  <a href="{% url 'deletar_item' item.id %}" class="btn btn-danger">Deletar</a>
+</div>  
+  {% include 'partials/_footer.html' %}
+     
+{% endblock %}
